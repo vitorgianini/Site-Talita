@@ -1,0 +1,302 @@
+:root {
+  --cor-principal: #c87b91;
+  --cor-secundaria: #f7d6df;
+  --cinza-escuro: #333;
+  --cinza-medio: #666;
+  --cinza-claro: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #fff;
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: white;
+  padding: 15px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  max-width: 140px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+/* MENU */
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--cor-principal);
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--cor-principal);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--cor-secundaria), #ffffff);
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  color: var(--cor-principal);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 15px;
+  color: var(--cinza-medio);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* SERVIÇOS */
+.servicos {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.servicos h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: var(--cor-principal);
+}
+
+/* GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  border-top: 5px solid var(--cor-principal);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card ul {
+  padding-left: 18px;
+  margin: 15px 0;
+}
+
+.card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--cinza-medio);
+}
+
+/* PREÇO */
+.preco {
+  margin-top: 15px;
+  font-weight: bold;
+  background: var(--cor-secundaria);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* BOTÃO */
+.btn-form {
+  display: block;
+  margin-top: 20px;
+  background: var(--cor-principal);
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-form:hover {
+  background: #a35c70;
+}
+
+/* CONTATO */
+.contato {
+  padding: 80px 20px;
+  background: var(--cinza-claro);
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+button {
+  background: var(--cor-principal);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #a35c70;
+}
+
+/* FOOTER */
+footer {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp img {
+  width: 70px;
+  transition: 0.2s;
+}
+
+.whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .servicos {
+    padding: 50px 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+  color: #555;
+  appearance: none; /* remove seta feia do navegador */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23c87b91' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #c87b91;
+}

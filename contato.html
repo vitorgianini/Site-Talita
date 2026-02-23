@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Contato</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="img/ChatGPT Image 23 de fev. de 2026, 13_41_01.png" class="logo">
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Solicite seu orçamento</h1>
+  <p>Preencha o formulário abaixo com as informações do seu serviço</p>
+</section>
+
+<section class="contato">
+<form>
+
+  <input type="text" placeholder="Seu nome" required>
+  <input type="tel" placeholder="WhatsApp" required>
+  <input type="email" placeholder="Email">
+
+  <select id="servico" onchange="mostrarCampos()" required>
+    <option value="">Selecione o serviço</option>
+    <option value="projeto">Projeto Arquitetônico</option>
+    <option value="obra">Acompanhamento de Obra</option>
+    <option value="regularizacao">Regularização de Imóvel</option>
+    <option value="laudo">Laudo Técnico</option>
+  </select>
+
+  <div id="camposServico"></div>
+
+  <textarea placeholder="Mensagem"></textarea>
+
+  <button type="submit">Enviar</button>
+
+</form>
+</section>
+
+<footer>
+  <p>© 2026 - Todos os direitos reservados</p>
+</footer>
+
+<script>
+function mostrarCampos() {
+  const servico = document.getElementById("servico").value;
+  const area = document.getElementById("camposServico");
+  area.innerHTML = "";
+
+  if (servico === "projeto") {
+    area.innerHTML = `
+      <input type="number" placeholder="Área do terreno (m²)">
+      <input type="text" placeholder="Tipo de construção">
+    `;
+  }
+
+  if (servico === "obra") {
+    area.innerHTML = `
+      <select>
+        <option>Obra já iniciada?</option>
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+      <input type="text" placeholder="Endereço da obra">
+    `;
+  }
+
+  if (servico === "regularizacao") {
+    area.innerHTML = `
+      <select>
+        <option>Possui matrícula?</option>
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+      <input type="number" placeholder="Área construída (m²)">
+    `;
+  }
+
+  if (servico === "laudo") {
+    area.innerHTML = `
+      <input type="text" placeholder="Finalidade do laudo">
+      <input type="text" placeholder="Endereço do imóvel">
+    `;
+  }
+}
+</script>
+<a href="https://wa.me/5511999999999" class="whatsapp" target="_blank">
+  <img src="img/Whatasapp Logo.png" alt="WhatsApp">
+</a>
+</body>
+</html>
